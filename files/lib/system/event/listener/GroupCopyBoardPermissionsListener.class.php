@@ -1,4 +1,5 @@
 <?php
+// wcf imports
 require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
 
 /**
@@ -33,18 +34,19 @@ class GroupCopyBoardPermissionsListener implements EventListener {
 	 * @see EventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-		$parameters = $eventObj->data['parameters']['user.usergroupcopy'];				
+		$parameters = $eventObj->data['parameters']['user.usergroupcopy'];
 		if ($parameters['copyBoardPermissions']) {
 			$this->readPermissionSettings();
-			
-			$sql = "DELETE FROM wbb".WBB_N."_board_to_group
-                     WHERE groupID = ".$parameters['targetGroup'];
+				
+			$sql = "DELETE 	FROM wbb".WBB_N."_board_to_group
+                     		WHERE 	groupID = ".$parameters['targetGroup'];
 			WCF::getDB()->sendQuery($sql);
 
-			$sql = "INSERT INTO wbb".WBB_N."_board_to_group (boardID, groupID, ".implode(',', $this->permissionSettings).")
-					SELECT boardID, ".$parameters['targetGroup'].", ".implode(',', $this->permissionSettings)."
-					FROM wbb".WBB_N."_board_to_group
-					WHERE groupID = ".$parameters['sourceGroup'];			
+			$sql = "INSERT INTO 	wbb".WBB_N."_board_to_group 
+						(boardID, groupID, ".implode(',', $this->permissionSettings).")
+				SELECT 		boardID, ".$parameters['targetGroup'].", ".implode(',', $this->permissionSettings)."
+				FROM 		wbb".WBB_N."_board_to_group
+				WHERE 		groupID = ".$parameters['sourceGroup'];			
 			WCF::getDB()->sendQuery($sql);
 		}
 	}
@@ -53,7 +55,8 @@ class GroupCopyBoardPermissionsListener implements EventListener {
 	 * Gets available permission settings.
 	 */
 	protected function readPermissionSettings() {
-		$sql = "SHOW COLUMNS FROM wbb".WBB_N."_board_to_group";
+		$sql = "SHOW COLUMNS 
+			FROM 		wbb".WBB_N."_board_to_group";
 		$result = WCF::getDB()->sendQuery($sql);
 		while ($row = WCF::getDB()->fetchArray($result)) {
 			if ($row['Field'] != 'boardID' && $row['Field'] != 'groupID') {
