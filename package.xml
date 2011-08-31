@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="net.hawkes.admintools.groupboardpermissions" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/package.xsd">
+    <packageinformation>
+        <packagename>AdminTools 2 Copy group board permissions</packagename>
+        <packagename language="de">AdminTools 2 Benutzgruppen Forenzugriffsrechte kopieren</packagename>
+        <packagename language="de-informal">AdminTools 2 Benutzgruppen Forenzugriffsrechte kopieren</packagename>
+        <packagedescription>This package extends the copy user groups functions with an option to copy the board permissions</packagedescription>        
+        <packagedescription language="de"><![CDATA[Dieses Paket erweitert die Funktion "Benutzergruppen kopieren" um eine Option, die es ermöglicht die Forenzugriffsrechte zu kopieren.]]></packagedescription>
+        <packagedescription language="de-informal"><![CDATA[Dieses Paket erweitert die Funktion "Benutzergruppen kopieren" um eine Option, die es ermöglicht die Forenzugriffsrechte zu kopieren.]]></packagedescription>
+        <version>1.0.2</version>
+        <date>2011-06-18</date>
+        <standalone>0</standalone>
+        <isUnique>0</isUnique> 
+        <plugin>com.woltlab.wbb</plugin>              
+        <packageurl>http://www.wbb3addons.de</packageurl>
+    </packageinformation>
+
+    <authorinformation>
+        <author>Oliver Kliebisch</author>
+        <authorurl>http://www.oliver-kliebisch.de</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage minversion="1.1.0">com.woltlab.wcf</requiredPackage>
+        <requiredPackage>com.woltlab.wbb</requiredPackage>
+        <requiredPackage>net.hawkes.admintools</requiredPackage>
+        <requiredPackage>net.hawkes.admintools.wcf.functions</requiredPackage>                
+    </requiredpackages>    
+
+    <instructions type="install">
+        <files>files.tar</files>                
+        <admintoolsfunction>admintools.xml</admintoolsfunction>     
+        <eventlistener>eventlistener.xml</eventlistener>   
+        <languages languagecode="de">de.xml</languages>               
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>        
+    </instructions>     
+    
+    <instructions type="update" fromversion="1.0.1">
+        <empty></empty>
+    </instructions>    
+
+</package>

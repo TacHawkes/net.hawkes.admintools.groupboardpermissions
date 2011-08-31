@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/language.xsd" languagecode="de-informal">
+	<category name="wcf.acp.admintools.option">		
+		<item name="wcf.acp.admintools.option.user.usergroupcopy.copyBoardPermissions"><![CDATA[Forenzugriffsrechte kopieren]]></item>
+		<item name="wcf.acp.admintools.option.user.usergroupcopy.copyBoardPermissions.description"><![CDATA[Ist diese Option aktiviert, werden alle Forenzugriffsrechte von der Quell- in die Zielgruppe kopiert.]]></item>		
+	</category>
+</language>
